@@ -1,0 +1,363 @@
+
+.notifikasi-page {
+    min-height: 100%;
+    padding: 24px;
+    background: #f8fafc;
+    color: #1e293b;
+}
+
+.notifikasi-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 18px;
+    margin-bottom: 24px;
+}
+
+.notifikasi-header h1 {
+    margin: 0 0 6px;
+    font-size: 24px;
+    font-weight: 700;
+}
+
+.notifikasi-header p {
+    margin: 0;
+    color: #64748b;
+    font-size: 14px;
+}
+
+.notifikasi-header-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 9px;
+}
+
+.notifikasi-read-all,
+.notifikasi-delete-all {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 10px 13px;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    background: white;
+    color: #475569;
+    font-size: 12px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.notifikasi-read-all:hover {
+    border-color: #bfdbfe;
+    background: #eff6ff;
+    color: #2563eb;
+}
+
+.notifikasi-delete-all:hover {
+    border-color: #fecaca;
+    background: #fef2f2;
+    color: #dc2626;
+}
+
+.notifikasi-header-actions button:disabled {
+    opacity: 0.45;
+    cursor: not-allowed;
+}
+
+.notifikasi-summary {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    margin-bottom: 24px;
+}
+
+.notifikasi-summary-card {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 20px;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    background: white;
+}
+
+.notifikasi-summary-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 46px;
+    height: 46px;
+    flex-shrink: 0;
+    border-radius: 10px;
+    font-size: 19px;
+}
+
+.notifikasi-summary-icon.blue {
+    background: #dbeafe;
+    color: #2563eb;
+}
+
+.notifikasi-summary-icon.orange {
+    background: #ffedd5;
+    color: #ea580c;
+}
+
+.notifikasi-summary-icon.green {
+    background: #dcfce7;
+    color: #16a34a;
+}
+
+.notifikasi-summary-card p {
+    margin: 0 0 5px;
+    color: #64748b;
+    font-size: 12px;
+}
+
+.notifikasi-summary-card h2 {
+    margin: 0;
+    font-size: 23px;
+}
+
+.notifikasi-content {
+    overflow: hidden;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    background: white;
+}
+
+.notifikasi-content-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 16px;
+    padding: 20px;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.notifikasi-content-header h3 {
+    margin: 0 0 5px;
+    font-size: 17px;
+}
+
+.notifikasi-content-header p {
+    margin: 0;
+    color: #64748b;
+    font-size: 13px;
+}
+
+.notifikasi-filter {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+}
+
+.notifikasi-filter button {
+    padding: 9px 12px;
+    border: 1px solid transparent;
+    border-radius: 7px;
+    background: transparent;
+    color: #64748b;
+    font-size: 12px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.notifikasi-filter button:hover {
+    background: #f8fafc;
+}
+
+.notifikasi-filter button.active {
+    background: #eff6ff;
+    color: #2563eb;
+    border-color: #bfdbfe;
+}
+
+.notifikasi-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+    padding: 19px 20px;
+    border-bottom: 1px solid #f1f5f9;
+}
+
+.notifikasi-item:last-child {
+    border-bottom: none;
+}
+
+.notifikasi-item.unread {
+    background: #f8fbff;
+}
+
+.notifikasi-item-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 42px;
+    height: 42px;
+    flex-shrink: 0;
+    border-radius: 10px;
+    font-size: 17px;
+}
+
+.notifikasi-item-icon.warning {
+    background: #ffedd5;
+    color: #ea580c;
+}
+
+.notifikasi-item-icon.danger {
+    background: #fee2e2;
+    color: #dc2626;
+}
+
+.notifikasi-item-icon.success {
+    background: #dcfce7;
+    color: #16a34a;
+}
+
+.notifikasi-item-icon.info {
+    background: #dbeafe;
+    color: #2563eb;
+}
+
+.notifikasi-item-body {
+    flex: 1;
+    min-width: 0;
+}
+
+.notifikasi-item-heading {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+}
+
+.notifikasi-item-heading h4 {
+    margin: 0;
+    font-size: 14px;
+    color: #1e293b;
+}
+
+.notifikasi-dot {
+    width: 8px;
+    height: 8px;
+    flex-shrink: 0;
+    border-radius: 50%;
+    background: #2563eb;
+}
+
+.notifikasi-item-body > p {
+    margin: 7px 0;
+    color: #64748b;
+    font-size: 13px;
+    line-height: 1.6;
+}
+
+.notifikasi-date {
+    color: #94a3b8;
+    font-size: 11px;
+}
+
+.notifikasi-item-actions {
+    display: flex;
+    gap: 7px;
+    flex-shrink: 0;
+}
+
+.notifikasi-mark-btn,
+.notifikasi-remove-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    border: none;
+    border-radius: 7px;
+    cursor: pointer;
+}
+
+.notifikasi-mark-btn {
+    background: #dcfce7;
+    color: #16a34a;
+}
+
+.notifikasi-remove-btn {
+    background: #fee2e2;
+    color: #dc2626;
+}
+
+.notifikasi-empty {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 55px 20px;
+    text-align: center;
+}
+
+.notifikasi-empty-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 58px;
+    height: 58px;
+    margin-bottom: 15px;
+    border-radius: 50%;
+    background: #f1f5f9;
+    color: #94a3b8;
+    font-size: 23px;
+}
+
+.notifikasi-empty h3 {
+    margin: 0 0 7px;
+    font-size: 16px;
+}
+
+.notifikasi-empty p {
+    margin: 0;
+    color: #64748b;
+    font-size: 13px;
+}
+
+@media (max-width: 900px) {
+    .notifikasi-header {
+        flex-direction: column;
+    }
+
+    .notifikasi-summary {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .notifikasi-page {
+        padding: 14px;
+    }
+
+    .notifikasi-summary {
+        grid-template-columns: 1fr;
+    }
+
+    .notifikasi-content-header {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .notifikasi-item {
+        gap: 10px;
+        padding: 15px 12px;
+    }
+
+    .notifikasi-item-icon {
+        width: 36px;
+        height: 36px;
+        font-size: 15px;
+    }
+
+    .notifikasi-item-heading h4 {
+        font-size: 13px;
+    }
+
+    .notifikasi-item-body > p {
+        font-size: 12px;
+    }
+}

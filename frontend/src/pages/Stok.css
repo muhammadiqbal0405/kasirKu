@@ -1,0 +1,403 @@
+
+.stok-page {
+    min-height: 100%;
+    padding: 24px;
+    background: #f8fafc;
+    color: #1e293b;
+}
+
+.stok-header {
+    margin-bottom: 24px;
+}
+
+.stok-header h1 {
+    margin: 0 0 6px;
+    font-size: 24px;
+    font-weight: 700;
+}
+
+.stok-header p {
+    margin: 0;
+    color: #64748b;
+    font-size: 14px;
+}
+
+.stok-statistics {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+    margin-bottom: 24px;
+}
+
+.stok-stat-card {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 20px;
+    background: white;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+}
+
+.stok-stat-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 46px;
+    height: 46px;
+    flex-shrink: 0;
+    border-radius: 10px;
+    font-size: 19px;
+}
+
+.stok-stat-icon.blue {
+    color: #2563eb;
+    background: #dbeafe;
+}
+
+.stok-stat-icon.purple {
+    color: #7c3aed;
+    background: #ede9fe;
+}
+
+.stok-stat-icon.orange {
+    color: #ea580c;
+    background: #ffedd5;
+}
+
+.stok-stat-icon.red {
+    color: #dc2626;
+    background: #fee2e2;
+}
+
+.stok-stat-card p {
+    margin: 0 0 6px;
+    color: #64748b;
+    font-size: 12px;
+}
+
+.stok-stat-card h2 {
+    margin: 0;
+    font-size: 23px;
+    font-weight: 700;
+}
+
+.stok-content {
+    overflow: hidden;
+    background: white;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+}
+
+.stok-content-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    padding: 20px;
+}
+
+.stok-content-header h3 {
+    margin: 0 0 6px;
+    font-size: 17px;
+}
+
+.stok-content-header p {
+    margin: 0;
+    color: #64748b;
+    font-size: 13px;
+}
+
+.stok-filter-area {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.stok-search {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    width: 230px;
+    padding: 10px 12px;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    color: #94a3b8;
+}
+
+.stok-search input {
+    width: 100%;
+    border: none;
+    outline: none;
+    color: #334155;
+    font-size: 13px;
+}
+
+.stok-filter-area select {
+    padding: 10px 12px;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    background: white;
+    color: #475569;
+    font-size: 13px;
+    outline: none;
+}
+
+.stok-table-wrapper {
+    width: 100%;
+    overflow-x: auto;
+}
+
+.stok-table {
+    width: 100%;
+    border-collapse: collapse;
+    white-space: nowrap;
+}
+
+.stok-table th {
+    padding: 14px 16px;
+    background: #f8fafc;
+    border-top: 1px solid #e2e8f0;
+    border-bottom: 1px solid #e2e8f0;
+    color: #64748b;
+    font-size: 12px;
+    font-weight: 600;
+    text-align: left;
+}
+
+.stok-table td {
+    padding: 15px 16px;
+    border-bottom: 1px solid #f1f5f9;
+    color: #475569;
+    font-size: 13px;
+}
+
+.stok-table tbody tr:hover {
+    background: #f8fafc;
+}
+
+.stok-product-name {
+    color: #1e293b !important;
+    font-weight: 600;
+}
+
+.stok-status {
+    display: inline-block;
+    padding: 5px 10px;
+    border-radius: 20px;
+    font-size: 11px;
+    font-weight: 600;
+}
+
+.stok-status.available {
+    color: #15803d;
+    background: #dcfce7;
+}
+
+.stok-status.low {
+    color: #c2410c;
+    background: #ffedd5;
+}
+
+.stok-status.out {
+    color: #b91c1c;
+    background: #fee2e2;
+}
+
+.stok-actions {
+    display: flex;
+    gap: 8px;
+}
+
+.stok-add-btn,
+.stok-reduce-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    border: none;
+    border-radius: 7px;
+    cursor: pointer;
+}
+
+.stok-add-btn {
+    color: #15803d;
+    background: #dcfce7;
+}
+
+.stok-reduce-btn {
+    color: #dc2626;
+    background: #fee2e2;
+}
+
+.stok-reduce-btn:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+}
+
+.stok-empty {
+    padding: 30px !important;
+    text-align: center;
+    color: #94a3b8 !important;
+}
+
+.stok-modal-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    background: rgba(15, 23, 42, 0.5);
+}
+
+.stok-modal {
+    width: 100%;
+    max-width: 440px;
+    padding: 24px;
+    background: white;
+    border-radius: 14px;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
+}
+
+.stok-modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 22px;
+}
+
+.stok-modal-header h3 {
+    margin: 0 0 6px;
+    font-size: 19px;
+}
+
+.stok-modal-header p {
+    margin: 0;
+    color: #64748b;
+    font-size: 13px;
+}
+
+.stok-close-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 34px;
+    height: 34px;
+    border: none;
+    border-radius: 8px;
+    background: #f1f5f9;
+    color: #64748b;
+    cursor: pointer;
+}
+
+.stok-current-info {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    padding: 14px;
+    border-radius: 8px;
+    background: #f8fafc;
+    font-size: 13px;
+}
+
+.stok-current-info span {
+    color: #64748b;
+}
+
+.stok-current-info strong {
+    color: #1e293b;
+}
+
+.stok-form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.stok-form-group label {
+    color: #334155;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.stok-form-group input {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 11px 12px;
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+    outline: none;
+    font-size: 13px;
+}
+
+.stok-form-group input:focus {
+    border-color: #2563eb;
+}
+
+.stok-modal-footer {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-top: 24px;
+}
+
+.stok-cancel-btn,
+.stok-confirm-btn {
+    padding: 10px 16px;
+    border-radius: 8px;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.stok-cancel-btn {
+    border: 1px solid #cbd5e1;
+    background: white;
+    color: #475569;
+}
+
+.stok-confirm-btn {
+    border: none;
+    background: #2563eb;
+    color: white;
+}
+
+.stok-confirm-btn:hover {
+    background: #1d4ed8;
+}
+
+@media (max-width: 1100px) {
+    .stok-statistics {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .stok-content-header {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .stok-filter-area {
+        width: 100%;
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .stok-search {
+        width: auto;
+    }
+}
+
+@media (max-width: 480px) {
+    .stok-page {
+        padding: 14px;
+    }
+
+    .stok-statistics {
+        grid-template-columns: 1fr;
+    }
+}

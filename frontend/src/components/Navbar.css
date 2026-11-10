@@ -1,0 +1,451 @@
+
+/* Mengatur semua elemen */
+* {
+    margin: 0;                       /* Menghapus margin bawaan */
+    padding: 0;                      /* Menghapus padding bawaan */
+    box-sizing: border-box;          /* Menghitung ukuran elemen */
+}
+
+/* NAVBAR UTAMA */
+.navbar {
+    width: 100%;                     /* Lebar memenuhi layar */
+    min-height: 75px;                /* Tinggi minimal navbar */
+    background: #ffffff;             /* Background putih */
+    display: flex;                   /* Menggunakan Flexbox */
+    align-items: center;             /* Elemen rata tengah vertikal */
+    justify-content: space-between;  /* Memberikan jarak antarbagian */
+    padding: 0 25px;                 /* Jarak kiri dan kanan */
+    box-shadow: 0 2px 12px rgba(0,0,0,0.06); /* Bayangan */
+    position: sticky;                /* Navbar menempel saat scroll */
+    top: 0;                          /* Menempel di bagian atas */
+    z-index: 1000;                   /* Menampilkan navbar di atas konten */
+    gap: 20px;                       /* Jarak antarbagian */
+}
+
+/* LOGO */
+.navbar-logo {
+    display: flex;                   /* Logo dan teks sejajar */
+    align-items: center;             /* Rata tengah */
+    gap: 10px;                       /* Jarak icon dan tulisan */
+    flex-shrink: 0;                  /* Mencegah logo mengecil */
+}
+
+.logo-icon {
+    width: 42px;                     /* Lebar icon */
+    height: 42px;                    /* Tinggi icon */
+    background: #2563eb;              /* Background biru */
+    color: white;                    /* Warna icon putih */
+    display: flex;                   /* Mengaktifkan flex */
+    align-items: center;             /* Rata tengah vertikal */
+    justify-content: center;         /* Rata tengah horizontal */
+    border-radius: 10px;             /* Sudut membulat */
+    font-size: 21px;                 /* Ukuran icon */
+}
+
+.logo-text h2 {
+    font-size: 21px;                 /* Ukuran nama aplikasi */
+    color: #1e293b;                  /* Warna tulisan */
+}
+
+.logo-text h2 span {
+    color: #2563eb;                  /* Warna tulisan Ku */
+}
+
+.logo-text small {
+    font-size: 10px;                 /* Ukuran subjudul */
+    color: #94a3b8;                  /* Warna abu-abu */
+}
+
+/* MENU NAVIGASI */
+.nav-menu {
+    display: flex;                   /* Menu horizontal */
+    align-items: center;             /* Rata tengah */
+    gap: 3px;                        /* Jarak antar-menu */
+    flex: 1;                         /* Menggunakan ruang tersedia */
+    justify-content: center;         /* Menu berada di tengah */
+}
+
+.nav-link {
+    display: flex;                   /* Icon dan teks sejajar */
+    align-items: center;             /* Rata tengah */
+    gap: 7px;                        /* Jarak icon dan tulisan */
+    padding: 11px 9px;               /* Ruang dalam menu */
+    text-decoration: none;           /* Menghilangkan garis bawah */
+    color: #64748b;                  /* Warna tulisan */
+    font-size: 12px;                 /* Ukuran tulisan */
+    border-radius: 8px;              /* Sudut membulat */
+    white-space: nowrap;             /* Tulisan tidak turun baris */
+    transition: 0.3s;                /* Animasi */
+}
+
+.nav-icon {
+    font-size: 14px;                 /* Ukuran icon menu */
+}
+
+/* HOVER DAN MENU AKTIF */
+.nav-link:hover,
+.nav-link.active {
+    background: #eff6ff;             /* Background biru muda */
+    color: #2563eb;                  /* Tulisan biru */
+}
+
+/* BAGIAN KANAN */
+.navbar-right {
+    display: flex;                   /* Elemen sejajar */
+    align-items: center;             /* Rata tengah */
+    gap: 17px;                       /* Jarak antar-elemen */
+    flex-shrink: 0;                  /* Tidak mengecil */
+}
+
+/* SEARCH */
+.search-box {
+    display: flex;                   /* Icon dan input sejajar */
+    align-items: center;             /* Rata tengah */
+    gap: 9px;                        /* Jarak antar-elemen */
+    background: #f1f5f9;              /* Background abu-abu */
+    padding: 10px 12px;              /* Ruang dalam */
+    border-radius: 8px;              /* Sudut membulat */
+    color: #64748b;                  /* Warna icon */
+}
+
+.search-box input {
+    width: 115px;                    /* Lebar input */
+    border: none;                    /* Menghilangkan border */
+    outline: none;                   /* Menghilangkan outline */
+    background: transparent;         /* Background transparan */
+    font-size: 12px;                 /* Ukuran teks */
+}
+
+.search-shortcut {
+    color: #94a3b8;                  /* Warna simbol */
+}
+
+/* DROPDOWN CONTAINER */
+.nav-dropdown {
+    position: relative;              /* Acuan posisi dropdown */
+}
+
+/* NOTIFIKASI */
+.notification-btn {
+    position: relative;              /* Acuan badge notifikasi */
+    border: none;                    /* Tanpa border */
+    background: none;                /* Background transparan */
+    font-size: 19px;                 /* Ukuran icon */
+    color: #64748b;                  /* Warna icon */
+    cursor: pointer;                 /* Cursor pointer */
+    padding: 5px;                    /* Area klik */
+}
+
+.notification-badge {
+    position: absolute;              /* Posisi bebas */
+    top: -3px;                       /* Posisi atas */
+    right: -4px;                     /* Posisi kanan */
+    background: #ef4444;             /* Background merah */
+    color: white;                    /* Tulisan putih */
+    font-size: 9px;                  /* Ukuran angka */
+    border-radius: 50%;              /* Bentuk lingkaran */
+    width: 16px;                     /* Lebar badge */
+    height: 16px;                    /* Tinggi badge */
+    display: flex;                   /* Flexbox */
+    align-items: center;             /* Rata tengah */
+    justify-content: center;         /* Rata tengah */
+}
+
+/* DROPDOWN NOTIFIKASI */
+.notification-dropdown {
+    position: absolute;              /* Posisi terhadap container */
+    top: 45px;                       /* Jarak dari atas */
+    right: -30px;                    /* Posisi dari kanan */
+    width: 290px;                    /* Lebar dropdown */
+    background: white;               /* Background putih */
+    border-radius: 10px;             /* Sudut membulat */
+    box-shadow: 0 5px 25px rgba(0,0,0,0.12); /* Bayangan */
+    padding: 15px;                   /* Ruang dalam */
+    z-index: 1100;                   /* Di atas navbar */
+}
+
+.dropdown-header {
+    display: flex;                   /* Judul dan jumlah sejajar */
+    justify-content: space-between;  /* Beri jarak */
+    margin-bottom: 12px;             /* Jarak bawah */
+    font-size: 13px;                 /* Ukuran tulisan */
+}
+
+.dropdown-header span {
+    color: #2563eb;                  /* Warna tulisan */
+}
+
+.notification-item {
+    display: flex;                   /* Icon dan teks sejajar */
+    gap: 12px;                       /* Jarak antar-elemen */
+    padding: 12px 0;                 /* Ruang atas dan bawah */
+    border-bottom: 1px solid #f1f5f9; /* Garis pemisah */
+    color: #2563eb;                  /* Warna icon */
+}
+
+.notification-item div {
+    display: flex;                   /* Tulisan vertikal */
+    flex-direction: column;          /* Susunan vertikal */
+    gap: 4px;                        /* Jarak tulisan */
+}
+
+.notification-item strong {
+    color: #334155;                  /* Warna judul */
+    font-size: 12px;                 /* Ukuran judul */
+}
+
+.notification-item small {
+    color: #94a3b8;                  /* Warna deskripsi */
+    font-size: 10px;                 /* Ukuran deskripsi */
+}
+
+.view-all {
+    display: block;                  /* Mengisi satu baris */
+    text-align: center;              /* Tulisan tengah */
+    color: #2563eb;                  /* Warna biru */
+    text-decoration: none;           /* Tanpa garis bawah */
+    font-size: 12px;                 /* Ukuran teks */
+    padding-top: 12px;               /* Jarak atas */
+}
+
+/* PROFIL */
+.profile-btn {
+    display: flex;                   /* Elemen sejajar */
+    align-items: center;             /* Rata tengah */
+    gap: 9px;                        /* Jarak antar-elemen */
+    background: none;                /* Background transparan */
+    border: none;                    /* Tanpa border */
+    cursor: pointer;                 /* Cursor pointer */
+}
+
+.profile-avatar {
+    font-size: 34px;                 /* Ukuran icon profil */
+    color: #2563eb;                  /* Warna icon */
+}
+
+.profile-info {
+    display: flex;                   /* Informasi vertikal */
+    flex-direction: column;          /* Susunan vertikal */
+    align-items: flex-start;         /* Rata kiri */
+    gap: 3px;                        /* Jarak tulisan */
+}
+
+.profile-info strong {
+    font-size: 12px;                 /* Ukuran nama */
+    color: #334155;                  /* Warna nama */
+}
+
+.profile-info small {
+    font-size: 10px;                 /* Ukuran jabatan */
+    color: #94a3b8;                  /* Warna jabatan */
+}
+
+.profile-arrow {
+    font-size: 10px;                 /* Ukuran panah */
+    color: #64748b;                  /* Warna panah */
+}
+
+/* DROPDOWN PROFIL */
+.profile-dropdown {
+    position: absolute;              /* Posisi dropdown */
+    top: 50px;                       /* Jarak dari atas */
+    right: 0;                        /* Rata kanan */
+    width: 210px;                    /* Lebar dropdown */
+    background: white;               /* Background putih */
+    padding: 10px;                   /* Ruang dalam */
+    border-radius: 10px;             /* Sudut membulat */
+    box-shadow: 0 5px 25px rgba(0,0,0,0.12); /* Bayangan */
+    z-index: 1100;                   /* Di atas elemen lain */
+}
+
+.profile-dropdown-header {
+    display: flex;                   /* Icon dan informasi sejajar */
+    align-items: center;             /* Rata tengah */
+    gap: 10px;                       /* Jarak antar-elemen */
+    padding: 10px;                   /* Ruang dalam */
+    border-bottom: 1px solid #e2e8f0; /* Garis bawah */
+    margin-bottom: 7px;              /* Jarak bawah */
+}
+
+.profile-dropdown-header > svg {
+    font-size: 30px;                 /* Ukuran icon */
+    color: #2563eb;                  /* Warna icon */
+}
+
+.profile-dropdown-header div {
+    display: flex;                   /* Teks vertikal */
+    flex-direction: column;          /* Susunan vertikal */
+    gap: 4px;                        /* Jarak teks */
+}
+
+.profile-dropdown-header strong {
+    font-size: 12px;                 /* Ukuran nama */
+}
+
+.profile-dropdown-header small {
+    font-size: 10px;                 /* Ukuran email */
+    color: #94a3b8;                  /* Warna email */
+}
+
+.profile-dropdown > a {
+    display: flex;                   /* Icon dan teks sejajar */
+    align-items: center;             /* Rata tengah */
+    gap: 10px;                        /* Jarak */
+    padding: 11px;                   /* Ruang dalam */
+    text-decoration: none;           /* Tanpa garis bawah */
+    color: #475569;                  /* Warna tulisan */
+    font-size: 12px;                 /* Ukuran tulisan */
+    border-radius: 6px;              /* Sudut membulat */
+}
+
+.profile-dropdown > a:hover {
+    background: #eff6ff;             /* Background hover */
+    color: #2563eb;                  /* Tulisan biru */
+}
+
+.profile-dropdown hr {
+    border: none;                    /* Menghilangkan border default */
+    border-top: 1px solid #e2e8f0;   /* Garis pemisah */
+    margin: 5px 0;                   /* Jarak vertikal */
+}
+
+.profile-dropdown .logout-link {
+    color: #ef4444;                  /* Warna merah untuk logout */
+}
+
+/* HAMBURGER */
+.hamburger {
+    display: none;                   /* Disembunyikan pada desktop */
+    background: none;                /* Background transparan */
+    border: none;                    /* Tanpa border */
+    font-size: 22px;                 /* Ukuran icon */
+    color: #334155;                  /* Warna icon */
+    cursor: pointer;                 /* Cursor pointer */
+}
+
+/* INFORMASI MOBILE */
+.mobile-info {
+    display: none;                   /* Disembunyikan pada desktop */
+}
+
+/* TABLET */
+@media (max-width: 1150px) {
+
+    .navbar {
+        padding: 0 15px;             /* Mengurangi padding */
+        gap: 10px;                   /* Mengurangi jarak */
+    }
+
+    .nav-link {
+        padding: 10px 7px;           /* Memperkecil area menu */
+        font-size: 11px;             /* Memperkecil teks */
+        gap: 5px;                    /* Memperkecil jarak icon */
+    }
+
+    .navbar-right {
+        gap: 12px;                   /* Mengurangi jarak kanan */
+    }
+
+    .search-box input {
+        width: 85px;                 /* Memperkecil input */
+    }
+}
+
+/* MOBILE DAN TABLET KECIL */
+@media (max-width: 850px) {
+
+    .navbar {
+        min-height: 70px;            /* Mengatur tinggi navbar */
+    }
+
+    .hamburger {
+        display: block;              /* Menampilkan hamburger */
+    }
+
+    .nav-menu {
+        display: none;               /* Menyembunyikan menu awal */
+        position: absolute;          /* Posisi menu */
+        top: 70px;                   /* Di bawah navbar */
+        left: 0;                     /* Menempel kiri */
+        width: 100%;                 /* Lebar penuh */
+        background: white;           /* Background putih */
+        flex-direction: column;      /* Menu vertikal */
+        align-items: stretch;        /* Menu memenuhi lebar */
+        justify-content: flex-start; /* Mulai dari atas */
+        padding: 15px;               /* Ruang dalam */
+        gap: 5px;                    /* Jarak menu */
+        box-shadow: 0 8px 15px rgba(0,0,0,0.08); /* Bayangan */
+        max-height: calc(100vh - 70px); /* Batas tinggi menu */
+        overflow-y: auto;            /* Scroll jika menu terlalu panjang */
+    }
+
+    .nav-menu.show {
+        display: flex;               /* Menampilkan menu saat dibuka */
+    }
+
+    .nav-link {
+        font-size: 14px;             /* Memperbesar tulisan */
+        padding: 13px;               /* Memperbesar area klik */
+    }
+
+    .search-box {
+        display: none;               /* Menyembunyikan pencarian */
+    }
+
+    .mobile-info {
+        display: flex;               /* Menampilkan informasi mobile */
+        justify-content: space-between; /* Jarak antar-informasi */
+        color: #94a3b8;              /* Warna abu-abu */
+        font-size: 11px;             /* Ukuran teks */
+        padding: 15px 10px 5px;      /* Ruang dalam */
+        border-top: 1px solid #e2e8f0; /* Garis atas */
+        margin-top: 10px;            /* Jarak atas */
+    }
+}
+
+/* SMARTPHONE */
+@media (max-width: 480px) {
+
+    .navbar {
+        padding: 0 12px;             /* Memperkecil padding */
+        gap: 8px;                    /* Memperkecil jarak */
+    }
+
+    .logo-icon {
+        width: 37px;                 /* Memperkecil icon */
+        height: 37px;                /* Memperkecil icon */
+        font-size: 18px;             /* Ukuran icon */
+    }
+
+    .logo-text h2 {
+        font-size: 18px;             /* Memperkecil tulisan */
+    }
+
+    .logo-text small {
+        font-size: 9px;              /* Memperkecil subjudul */
+    }
+
+    .navbar-right {
+        gap: 12px;                   /* Jarak elemen kanan */
+    }
+
+    .profile-info,
+    .profile-arrow {
+        display: none;               /* Menyembunyikan informasi profil */
+    }
+
+    .profile-avatar {
+        font-size: 29px;             /* Memperkecil icon profil */
+    }
+
+    .notification-btn {
+        font-size: 17px;             /* Memperkecil icon notifikasi */
+    }
+
+    .notification-dropdown {
+        position: fixed;             /* Posisi mengikuti layar */
+        top: 75px;                   /* Di bawah navbar */
+        right: 10px;                 /* Jarak dari kanan */
+        width: min(290px, calc(100vw - 20px)); /* Batas lebar */
+    }
+}

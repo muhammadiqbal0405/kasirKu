@@ -1,0 +1,255 @@
+
+.profil-page {
+    min-height: 100%;
+    padding: 24px;
+    background: #f8fafc;
+    color: #1e293b;
+}
+
+.profil-header {
+    margin-bottom: 24px;
+}
+
+.profil-header h1 {
+    margin: 0 0 6px;
+    font-size: 24px;
+    font-weight: 700;
+}
+
+.profil-header p {
+    margin: 0;
+    color: #64748b;
+    font-size: 14px;
+}
+
+.profil-layout {
+    display: grid;
+    grid-template-columns: 280px 1fr;
+    align-items: start;
+    gap: 20px;
+}
+
+.profil-card,
+.profil-form-card {
+    padding: 24px;
+    background: white;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+}
+
+.profil-card {
+    text-align: center;
+}
+
+.profil-avatar {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100px;
+    height: 100px;
+    margin: 0 auto 16px;
+    border-radius: 50%;
+    background: #dbeafe;
+    color: #2563eb;
+    font-size: 32px;
+    font-weight: 700;
+}
+
+.profil-camera {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 30px;
+    height: 30px;
+    border: 3px solid white;
+    border-radius: 50%;
+    background: #2563eb;
+    color: white;
+    font-size: 12px;
+}
+
+.profil-card h2 {
+    margin: 0 0 6px;
+    font-size: 19px;
+}
+
+.profil-role {
+    display: inline-block;
+    margin: 0;
+    padding: 5px 12px;
+    border-radius: 20px;
+    background: #dbeafe;
+    color: #2563eb;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.profil-divider {
+    height: 1px;
+    margin: 22px 0;
+    background: #e2e8f0;
+}
+
+.profil-info {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    text-align: left;
+}
+
+.profil-info div {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    color: #64748b;
+    font-size: 12px;
+    overflow-wrap: anywhere;
+}
+
+.profil-info svg {
+    flex-shrink: 0;
+    margin-top: 2px;
+    color: #2563eb;
+}
+
+.profil-form-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 24px;
+}
+
+.profil-form-header h3 {
+    margin: 0 0 6px;
+    font-size: 17px;
+}
+
+.profil-form-header p {
+    margin: 0;
+    color: #64748b;
+    font-size: 13px;
+}
+
+.profil-header-icon {
+    color: #2563eb;
+    font-size: 22px;
+}
+
+.profil-form-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.profil-field {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.profil-field.full {
+    grid-column: 1 / -1;
+}
+
+.profil-field label {
+    color: #334155;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.profil-input {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 0 12px;
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+    color: #94a3b8;
+}
+
+.profil-input:focus-within {
+    border-color: #2563eb;
+}
+
+.profil-input svg {
+    flex-shrink: 0;
+    font-size: 13px;
+}
+
+.profil-input input {
+    width: 100%;
+    min-width: 0;
+    padding: 12px 0;
+    border: none;
+    outline: none;
+    color: #334155;
+    font-size: 13px;
+}
+
+.profil-form-footer {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 26px;
+    padding-top: 20px;
+    border-top: 1px solid #f1f5f9;
+}
+
+.profil-save-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 11px 18px;
+    border: none;
+    border-radius: 8px;
+    background: #2563eb;
+    color: white;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.profil-save-btn:hover {
+    background: #1d4ed8;
+}
+
+@media (max-width: 850px) {
+    .profil-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .profil-card {
+        max-width: none;
+    }
+}
+
+@media (max-width: 550px) {
+    .profil-page {
+        padding: 14px;
+    }
+
+    .profil-form-card,
+    .profil-card {
+        padding: 18px;
+    }
+
+    .profil-form-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .profil-field.full {
+        grid-column: auto;
+    }
+
+    .profil-form-footer {
+        justify-content: stretch;
+    }
+
+    .profil-save-btn {
+        width: 100%;
+    }
+}

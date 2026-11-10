@@ -1,0 +1,25 @@
+
+/* Mengatur tampilan seluruh halaman */
+body {
+    font-family: Arial, sans-serif; /* Menggunakan font Arial */
+    background: #f5f7fb;            /* Background abu-abu muda */
+    color: #1e293b;                 /* Warna tulisan */
+}
+
+/* Mengatur area konten utama */
+.content {
+    padding: 30px;                  /* Jarak konten dari tepi */
+    min-height: calc(100vh - 75px); /* Tinggi minimal halaman */
+}
+
+/* Mengatur judul dashboard */
+.content h1 {
+    font-size: 25px;                /* Ukuran judul */
+    margin-bottom: 10px;            /* Jarak bawah judul */
+}
+
+/* Mengatur deskripsi dashboard */
+.content p {
+    color: #64748b;                 /* Warna deskripsi */
+    font-size: 14px;                /* Ukuran teks */
+}

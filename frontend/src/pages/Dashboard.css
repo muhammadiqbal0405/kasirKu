@@ -1,0 +1,589 @@
+
+/* Container utama */
+.dashboard-container {
+    padding: 25px;
+    background: #f8fafc;
+    min-height: 100vh;
+    color: #1e293b;
+}
+
+/* Header */
+.dashboard-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+}
+
+.dashboard-header h1 {
+    font-size: 26px;
+    margin-bottom: 5px;
+}
+
+.dashboard-header p,
+.dashboard-card p {
+    color: #64748b;
+    font-size: 14px;
+}
+
+.dashboard-date {
+    background: white;
+    padding: 12px 18px;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    font-size: 14px;
+}
+
+/* Statistik */
+.statistics-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    margin-bottom: 25px;
+}
+
+.stat-card {
+    background: white;
+    padding: 22px;
+    border-radius: 12px;
+    border: 1px solid #e2e8f0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.stat-info p {
+    font-size: 14px;
+    color: #64748b;
+}
+
+.stat-info h2 {
+    font-size: 23px;
+    margin: 12px 0;
+}
+
+.stat-percentage {
+    color: #16a34a;
+    font-size: 12px;
+}
+
+.stat-percentage small {
+    color: #64748b;
+}
+
+.stat-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 21px;
+}
+
+.green {
+    background: #dcfce7;
+    color: #16a34a;
+}
+
+.blue {
+    background: #dbeafe;
+    color: #2563eb;
+}
+
+.orange {
+    background: #ffedd5;
+    color: #ea580c;
+}
+
+.purple {
+    background: #f3e8ff;
+    color: #9333ea;
+}
+
+/* Layout grafik dan produk */
+.dashboard-content-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 20px;
+    margin-bottom: 25px;
+}
+
+.dashboard-card {
+    background: white;
+    padding: 22px;
+    border-radius: 12px;
+    border: 1px solid #e2e8f0;
+}
+
+.dashboard-card h3 {
+    font-size: 17px;
+    margin-bottom: 8px;
+}
+
+
+/* HEADER GRAFIK */
+.sales-card {
+    min-width: 0;
+}
+
+.sales-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 25px;
+}
+
+.sales-total {
+    text-align: right;
+}
+
+.sales-total small {
+    color: #64748b;
+    font-size: 12px;
+}
+
+.sales-total h2 {
+    color: #2563eb;
+    font-size: 21px;
+    margin-top: 5px;
+}
+
+/* CONTAINER GRAFIK */
+.chart-container {
+    display: flex;
+    height: 280px;
+    gap: 15px;
+}
+
+/* SUMBU VERTIKAL */
+.chart-y-axis {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding-bottom: 32px;
+    color: #94a3b8;
+    font-size: 11px;
+    text-align: right;
+    white-space: nowrap;
+}
+
+/* AREA UTAMA GRAFIK */
+.chart-main {
+    position: relative;
+    flex: 1;
+    min-width: 0;
+    height: 100%;
+}
+
+/* GARIS BANTU */
+.chart-grid {
+    position: absolute;
+    inset: 0 0 32px 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    pointer-events: none;
+}
+
+.chart-grid span {
+    width: 100%;
+    border-top: 1px dashed #e2e8f0;
+}
+
+/* KOLOM BATANG */
+.chart-bars {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    justify-content: space-around;
+    align-items: stretch;
+    gap: 10px;
+}
+
+.chart-column {
+    flex: 1;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    position: relative;
+}
+
+.chart-bar {
+    width: min(45px, 65%);
+    max-height: calc(100% - 32px);
+    min-height: 5px;
+    position: relative;
+    z-index: 1;
+    border-radius: 7px 7px 0 0;
+
+    background: linear-gradient(
+        180deg,
+        #60a5fa 0%,
+        #2563eb 100%
+    );
+
+    cursor: pointer;
+
+    transform-origin: bottom;
+    animation: growBar 0.7s ease-out backwards;
+
+    transition:
+        filter 0.2s ease,
+        transform 0.2s ease;
+}
+
+.chart-bar:hover {
+    filter: brightness(1.1);
+    transform: scaleX(1.12);
+}
+
+/* TOOLTIP */
+.bar-tooltip {
+    position: absolute;
+    bottom: calc(100% + 9px);
+    left: 50%;
+    transform: translateX(-50%);
+
+    background: #1e293b;
+    color: white;
+
+    padding: 7px 9px;
+    border-radius: 6px;
+
+    font-size: 11px;
+    white-space: nowrap;
+
+    opacity: 0;
+    visibility: hidden;
+
+    transition: opacity 0.2s ease;
+    pointer-events: none;
+}
+
+.chart-bar:hover .bar-tooltip {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* LABEL HARI */
+.chart-day {
+    position: absolute;
+    bottom: 0;
+    font-size: 12px;
+    color: #64748b;
+}
+
+/* ANIMASI */
+@keyframes growBar {
+    from {
+        transform: scaleY(0);
+    }
+
+    to {
+        transform: scaleY(1);
+    }
+}
+
+/* RESPONSIVE */
+@media (max-width: 600px) {
+    .sales-header {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .sales-total {
+        text-align: left;
+    }
+
+    .chart-container {
+        height: 240px;
+        gap: 8px;
+    }
+
+    .chart-y-axis {
+        font-size: 9px;
+    }
+
+    .chart-bars {
+        gap: 4px;
+    }
+
+    .chart-bar {
+        width: 65%;
+    }
+
+    .chart-day {
+        font-size: 10px;
+    }
+}
+
+
+/* Produk terlaris */
+.best-product {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 17px 0;
+    border-bottom: 1px solid #e2e8f0;
+    gap: 10px;
+}
+
+.best-product div {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.best-product strong {
+    font-size: 13px;
+}
+
+.best-product small {
+    color: #64748b;
+    font-size: 12px;
+}
+
+/* Transaksi */
+.transaction-card {
+    overflow: hidden;
+}
+
+.transaction-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.transaction-header button {
+    padding: 9px 15px;
+    background: #2563eb;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.table-wrapper {
+    width: 100%;
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+}
+
+th,
+td {
+    padding: 15px;
+    border-bottom: 1px solid #e2e8f0;
+    font-size: 13px;
+    white-space: nowrap;
+}
+
+th {
+    color: #64748b;
+    background: #f8fafc;
+}
+
+/* Status transaksi */
+.status {
+    padding: 5px 10px;
+    border-radius: 20px;
+    font-size: 12px;
+}
+
+.status.selesai {
+    background: #dcfce7;
+    color: #15803d;
+}
+
+.status.pending {
+    background: #fef3c7;
+    color: #b45309;
+}
+
+/* Responsive tablet */
+@media (max-width: 1000px) {
+    .statistics-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .dashboard-content-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Responsive smartphone */
+@media (max-width: 600px) {
+    .dashboard-container {
+        padding: 15px;
+    }
+
+    .statistics-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .dashboard-header {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .transaction-header {
+        align-items: flex-start;
+        gap: 12px;
+        flex-direction: column;
+    }
+}
+
+
+/* ==========================
+   TRANSAKSI TERBARU
+========================== */
+
+.transaction-table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+}
+
+.transaction-table th {
+    background: #f8fafc;
+    color: #64748b;
+    font-weight: 600;
+    padding: 16px;
+    font-size: 12px;
+}
+
+.transaction-table td {
+    padding: 16px;
+    border-bottom: 1px solid #e2e8f0;
+    font-size: 13px;
+}
+
+.transaction-table tbody tr:hover {
+    background: #f8fafc;
+}
+
+/* ID transaksi */
+
+.transaction-id {
+    color: #2563eb;
+    font-weight: 600;
+}
+
+/* Informasi pelanggan */
+
+.customer-info {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.customer-avatar {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    background: #dbeafe;
+    color: #2563eb;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-weight: 700;
+    font-size: 14px;
+}
+
+.customer-info strong {
+    font-size: 13px;
+}
+
+/* Tanggal dan waktu */
+
+.date-info {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.date-info strong {
+    font-size: 12px;
+}
+
+.date-info small {
+    color: #94a3b8;
+    font-size: 11px;
+}
+
+/* Metode pembayaran */
+
+.payment-method {
+    padding: 6px 10px;
+    border-radius: 6px;
+    font-size: 11px;
+    font-weight: 600;
+}
+
+.payment-method.tunai {
+    background: #dcfce7;
+    color: #15803d;
+}
+
+.payment-method.qris {
+    background: #dbeafe;
+    color: #1d4ed8;
+}
+
+.payment-method.transfer {
+    background: #f3e8ff;
+    color: #9333ea;
+}
+
+/* Total transaksi */
+
+.transaction-total {
+    font-weight: 700;
+    color: #1e293b;
+}
+
+/* Tombol detail */
+
+.detail-btn {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+
+    padding: 8px 11px;
+
+    background: #eff6ff;
+    color: #2563eb;
+
+    border: none;
+    border-radius: 6px;
+
+    cursor: pointer;
+    font-size: 12px;
+    font-weight: 600;
+
+    transition: 0.2s;
+}
+
+.detail-btn:hover {
+    background: #dbeafe;
+}
+
+/* Responsif tabel */
+
+@media (max-width: 768px) {
+    .transaction-table {
+        min-width: 850px;
+    }
+}
